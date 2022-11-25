@@ -1,0 +1,13 @@
+.title{
+    text-align: center;
+    font-weight: 500;
+    font-size: 4rem;
+    color: var(--clr-grey-3);
+}
+.slash{
+    color: var(--clr-primary-5);
+    font-size: 3.4rem;
+    margin-right: 1.6rem;
+    font-weight: 700;
+    letter-spacing: var(--spacing);
+}
