@@ -1,7 +1,7 @@
 import styles from './body.module.css';
 
 import Slide from '../slide/Slide';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import people from '../../data.js';
 import {FiChevronLeft, FiChevronRight} from 'react-icons/fi';
 
@@ -10,7 +10,12 @@ import {FiChevronLeft, FiChevronRight} from 'react-icons/fi';
 const Body = () => {
     const [positions,setPositions]=useState({pre:1,active:2,next:3});
 
-
+    useEffect(() => {
+        const interval = setInterval(() => {
+            loadNextSlide();
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [positions]);
 
     const loadNextSlide = () => {
         const currentPositions={...positions}
