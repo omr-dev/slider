@@ -77,4 +77,4 @@ const getPeople=()=>{
     return people;
 }
 
-export default getPeople();
+export default getPeople;
