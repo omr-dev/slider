@@ -2,13 +2,14 @@ import styles from './body.module.css';
 
 import Slide from '../slide/Slide';
 import {useEffect, useState} from 'react';
-import people from '../../data.js';
+import getPeople, {Person} from '../../data.js';
 import {FiChevronLeft, FiChevronRight} from 'react-icons/fi';
 
 
 
 const Body = () => {
     const [positions,setPositions]=useState({pre:1,active:2,next:3});
+    const people=getPeople();
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -43,7 +44,7 @@ const Body = () => {
                 <button className={styles.btn+" "+styles.btnLeft} onClick={loadPreSlide}><FiChevronLeft/></button>
                 <div className={styles.slideContainer}>
 
-                    {people.map((person, index) => {
+                    {people.map((person:Person, index:number) => {
                         let pos;
 
                         if (positions.pre===person.id) {

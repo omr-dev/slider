@@ -1,4 +1,14 @@
-const people = [
+export type Person={
+    id:number;
+    image:string;
+    name:string;
+    title:string;
+    quote:string;
+
+};
+
+
+const people:Person[] = [
     {
         id: 1,
         image:
@@ -63,5 +73,8 @@ const people = [
             'Marfa af yr 3 wolf moon kogi, readymade distillery asymmetrical seitan kale chips fingerstache cloud bread mustache twee messenger bag. ',
     },
 ];
+const getPeople=()=>{
+    return people;
+}
 
-export default people;
+export default getPeople();

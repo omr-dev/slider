@@ -1,7 +1,11 @@
 import styles from './slide.module.css';
 import {FaQuoteRight} from 'react-icons/fa';
-
-const Slide = ({pos,person}) => {
+import {Person} from '../../data';
+type PropsSlide={
+    pos:string;
+    person:Person;
+}
+const Slide = ({pos,person}:PropsSlide) => {
     const {image,title,name,quote}=person;
 
 
